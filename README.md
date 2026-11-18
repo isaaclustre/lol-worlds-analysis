@@ -2,7 +2,7 @@
 
 **Live site: https://isaaclustre.github.io/lol-worlds-analysis/**
 
-![Site preview](assets/preview.png)  <!-- screenshot of your home page; save it in an assets/ folder -->
+![Site preview](assets/preview.png) 
 
 A data analysis of every League of Legends World Championship from 2020 to 2025, built using PostgreSQL, Python, and HTML/CSS. It asks who the most impactful player is by combining three measures: lane dominance, kill participation, and win rate above expected given the game situation.
 
