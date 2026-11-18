@@ -1,6 +1,6 @@
 # Who Is the Most Impactful Player at Worlds?
 
-**Live site: https://[your-username].github.io/lol-worlds-analysis/**
+**Live site: https://isaaclustre.github.io/lol-worlds-analysis/**
 
 ![Site preview](assets/preview.png)  <!-- screenshot of your home page; save it in an assets/ folder -->
 
