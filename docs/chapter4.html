@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conclusions</title>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+  <style>
+    body {
+      background-color: #0b0f19;
+      color: #f1f5f9;                  /* Brighter, whiter text color */
+      font-weight: 500;                /* Standard solid font weight */
+      -webkit-font-smoothing: antialiased; /* Renders text sharper and slightly bolder on dark themes */
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+
+    /* Top Navigation Link */
+    .back-link {
+      display: inline-block;
+      color: #60a5fa;
+      text-decoration: none;
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+    .finding{
+  border-left:4px solid var(--gold,#d9a84a);
+  padding:.25rem 0 .25rem 1.25rem;
+  margin:1.5rem 0;
+}
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      color: #f8fafc;
+      font-size: 2.2rem;
+      font-family: Georgia, serif;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #f8fafc;
+      font-size: 1.5rem;
+      margin-top: 32px;
+      margin-bottom: 16px;
+    }
+
+    /* Callout Box with Gold/Yellow Left Border */
+    .callout {
+      border-left: 3px solid #d97706;
+      background-color: rgba(217, 119, 6, 0.05);
+      padding: 12px 20px;
+      margin: 20px 0;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .callout p {
+      color: #e2e8f0;
+      margin: 8px 0;
+      font-size: 0.95rem;
+    }
+
+    /* Table Styling */
+    .tbl-wrap {
+      margin-top: 20px;
+      overflow-x: auto;
+    }
+
+    .rank-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .rank-table th {
+      color: #64748b;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 12px 8px;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .rank-table td {
+      padding: 12px 8px;
+      border-bottom: 1px solid #1e293b;
+      color: #f8fafc;
+    }
+
+    .player {
+      font-weight: 600;
+    }
+
+    .sub {
+      display: block;
+      font-size: 0.8rem;
+      color: #64748b;
+      font-weight: normal;
+    }
+
+    .num {
+      font-size: 0.95rem;
+    }
+
+    .rk {
+      font-size: 0.75rem;
+      color: #64748b;
+      margin-left: 4px;
+    }
+
+    .total {
+      font-weight: bold;
+      color: #f59e0b;
+    }
+
+    /* Bullet List & Footnote */
+    .note-list {
+      color: #f1f5f9;
+      font-size: 0.9rem;
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+
+    .note-list li {
+      margin-bottom: 4px;
+    }
+    /* Styling the player names into clean horizontal badges */
+.player-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0 24px 0;
+}
+
+.badge {
+  background-color: #1e293b;
+  color: #f1f5f9;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid #334155;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Giving the commentary paragraphs subtle spacing and styling */
+.analysis-text {
+  margin-bottom: 16px;
+  color: #cbd5e1;
+}
+
+.conclusion-text {
+  font-style: italic;
+  color: #94a3b8;
+  border-left: 2px solid #475569;
+  padding-left: 12px;
+  margin-top: 20px;
+}
+.vs-wrap{overflow-x:auto;margin:1.5rem 0}
+.vs-table{width:100%;min-width:520px;border-collapse:collapse;font-size:.92rem}
+.vs-table caption{caption-side:top;text-align:left;font-size:.82rem;
+  color:var(--muted,#8b93a7);padding-bottom:.6rem}
+.vs-table th{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  padding:.5rem .6rem;border-bottom:1px solid rgba(255,255,255,.15)}
+.vs-table th.fbi{color:var(--neg,#d1655a);text-align:left}
+.vs-table th.ign{color:var(--gold,#d9a84a);text-align:right}
+.vs-table th.mid{color:var(--muted,#8b93a7);text-align:center}
+.vs-table td{padding:.7rem .6rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.vs-table .metric{text-align:center;color:var(--muted,#8b93a7);font-size:.85rem;white-space:nowrap}
+.vs-table .v{font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap;width:4.5rem}
+.vs-table .v.neg{color:var(--neg,#d1655a);text-align:left}
+.vs-table .v.pos{color:var(--gold,#d9a84a);text-align:right}
+.vs-table .track{width:28%}
+.vs-table .track.l{text-align:right}
+.vs-table .bar{display:inline-block;height:10px;border-radius:5px;width:var(--w,0%);vertical-align:middle}
+.vs-table .bar.neg{background:var(--neg,#d1655a)}
+.vs-table .bar.pos{background:var(--gold,#d9a84a)}
+.math-block.labeled{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;   /* label | equation | empty balance column */
+  align-items:center;
+  gap:1rem;
+}
+.math-label{
+  font-size:.78rem;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--gold,#d9a84a);
+}
+.math-eq mjx-container{margin:0 !important}   /* MathJax adds vertical margin that throws off the alignment */
+
+@media (max-width:560px){
+  .math-block.labeled{grid-template-columns:1fr;text-align:center}   /* stack on phones */
+}
+.aside{
+  font-size:.85rem;
+  color:var(--muted,#8b93a7);
+  margin-top:-.5rem;    /* pulls it closer to the sentence above */
+}
+.idx-wrap{overflow-x:auto;margin:1.5rem 0}
+.idx-table{width:100%;min-width:560px;border-collapse:collapse;font-size:.92rem}
+.idx-table caption{caption-side:top;text-align:left;font-size:.82rem;
+  color:var(--muted,#8b93a7);padding-bottom:.6rem}
+.idx-table th{text-align:left;font-size:.72rem;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted,#8b93a7);padding:.5rem .75rem;
+  border-bottom:1px solid var(--gold,#d9a84a)}
+.idx-table td{padding:.65rem .75rem;border-bottom:1px solid rgba(255,255,255,.07);vertical-align:middle}
+.idx-table tbody tr:hover{background:rgba(255,255,255,.03)}
+.idx-table .n{width:2rem;color:var(--muted,#8b93a7);font-variant-numeric:tabular-nums}
+.idx-table tbody tr:first-child .n{color:var(--gold,#d9a84a);font-weight:700}
+.idx-table .who{font-weight:600}
+.idx-table .sub{display:block;font-weight:400;font-size:.78rem;color:var(--muted,#8b93a7);margin-top:.1rem}
+.idx-table .role{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.06em;
+  padding:.05rem .4rem;margin-right:.35rem;border:1px solid rgba(255,255,255,.25);
+  border-radius:3px;color:var(--text,#dfe3ee)}
+.idx-table .idx{white-space:nowrap}
+.idx-table .track{display:inline-block;width:110px;height:8px;border-radius:4px;
+  background:rgba(255,255,255,.08);vertical-align:middle;overflow:hidden}
+.idx-table .bar{display:block;height:100%;width:var(--w,0%);border-radius:4px;
+  background:var(--gold,#d9a84a)}
+.idx-table .alt .bar{opacity:.5}
+.idx-table .val{display:inline-block;margin-left:.6rem;font-weight:700;
+  font-variant-numeric:tabular-nums;min-width:3.2rem}
+.idx-note{font-size:.82rem;color:var(--muted,#8b93a7)}
+@media (max-width:560px){.idx-table .track{width:70px}}
+.next-chapter-container {
+  margin-top: 48px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: flex-end; /* Aligns the card to the right side */
+}
+
+.next-chapter-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #111827;
+  border: 1px solid #1f2937;
+  border-left: 3px solid #d97706; /* Matches your gold accent style */
+  border-radius: 0 8px 8px 0;
+  padding: 16px 24px;
+  color: #f1f5f9;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  width: 100%;
+  max-width: 320px;
+}
+
+.next-chapter-card:hover {
+  background-color: #1f2937;
+  border-color: #374151;
+  border-left-color: #f59e0b;
+  transform: translateY(-2px);
+}
+
+.chapter-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+  margin-bottom: 4px;
+}
+
+.chapter-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+.top-nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+/* Ensure the card doesn't take up full width when inline */
+.next-chapter-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #111827;
+  border: 1px solid #1f2937;
+  border-left: 3px solid #d97706;
+  border-radius: 0 8px 8px 0;
+  padding: 12px 18px;
+  color: #f1f5f9;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  width: 280px; /* Controls the card width so it fits nicely next to the link */
+}
+
+.next-chapter-card:hover {
+  background-color: #1f2937;
+  border-color: #374151;
+  border-left-color: #f59e0b;
+}
+:root{
+  --gold:#d9a84a;         /* what .finding, .math-label and the bars already render as */
+  --muted:#94a3b8;        /* your slate gray (same as .chapter-label) */
+  --text:#f1f5f9;         /* your body text color */
+  --neg:#d1655a;          /* FBI / "problem" red */
+  --panel:#111827;        /* your card background (nav cards) */
+  --panel-line:#1f2937;   /* your card border */
+}
+.adjust{margin-top:2.5rem}
+
+/* scenario: two games, dots = team kills */
+.scenario{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:center;margin:1.5rem 0 .6rem}
+.game{background:var(--panel);border:1px solid var(--panel-line);border-radius:8px;padding:1rem 1.1rem}
+.game-head{font-size:.75rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:.7rem}
+.dots{display:flex;flex-wrap:wrap;gap:6px;min-height:18px}
+.dots span{width:16px;height:16px;border-radius:50%;background:var(--gold)}
+.dots span.miss{background:transparent;border:2px solid #475569;box-sizing:border-box}
+.game .kp{margin-top:.8rem;font-size:1.5rem;font-weight:700;font-variant-numeric:tabular-nums}
+.vs{color:var(--muted);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
+.legend{font-size:.8rem;color:var(--muted);margin-bottom:1.5rem}
+.legend span{display:inline-block;width:11px;height:11px;border-radius:50%;background:var(--gold);
+  vertical-align:middle;margin:0 .3rem 0 .2rem}
+.legend span.miss{background:transparent;border:2px solid #475569;box-sizing:border-box}
+
+/* the two method cards (same look as your nav cards) */
+.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin:1.5rem 0 2rem}
+.method{background:var(--panel);border:1px solid var(--panel-line);border-left:3px solid var(--gold);
+  border-radius:0 8px 8px 0;padding:1.25rem 1.4rem}
+.step{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;
+  border-radius:50%;background:var(--gold);color:#0b0f19;font-weight:700;font-size:.85rem;margin-bottom:.6rem}
+.method h3{margin:0 0 .6rem;color:#f8fafc}
+.method .line{font-size:.92rem;margin:.4rem 0}
+.tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.05em;
+  text-transform:uppercase;margin-right:.45rem}
+.tag.bad{color:var(--neg)}
+.tag.good{color:var(--gold)}
+.method .eq{margin:1rem 0;padding:.4rem .25rem;background:#0b0f19;border:1px solid var(--panel-line);
+  border-radius:6px;text-align:center}
+.method .eq mjx-container,.finding .eq mjx-container{margin:0 !important}  /* same MathJax margin fix as .math-eq */
+.method .ex{font-size:.82rem;color:var(--muted);border-top:1px dashed var(--panel-line);
+  padding-top:.65rem;margin-top:.8rem}
+
+/* combined formula: reuses your existing .finding gold line */
+.finding .eq{margin:.75rem 0}
+
+/* footnote */
+.adjust .notes{font-size:.82rem;color:var(--muted);border-top:1px solid var(--panel-line);padding-top:.6rem}
+.adjust .notes ul{margin:.3rem 0;padding-left:1.2rem}
+.adjust .notes li{margin:.2rem 0}
+
+/* three-card equations are a little narrower */
+.method .eq{font-size:.95rem}
+
+/* pipeline strip: Pool -> Shrink -> Standardize */
+.pipeline{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:1.25rem 0 0}
+.pipeline .chip{font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  padding:.3rem .75rem;border:1px solid var(--gold);border-radius:999px;color:var(--gold)}
+.pipeline .arrow{color:var(--muted)}
+
+@media (max-width:860px){
+  .method-grid{grid-template-columns:1fr}          /* cards stack once the page gets narrow */
+}
+@media (max-width:720px){
+  .scenario{grid-template-columns:1fr}
+  .vs{text-align:center}
+}
+
+/* Collapsible Tab Container */
+.collapsible-table {
+  background-color: #111827;
+  border: 1px solid #1f2937;
+  border-left: 3px solid #d97706; /* Matches your gold accent line */
+  border-radius: 0 8px 8px 0;
+  margin: 24px 0;
+  overflow: hidden;
+}
+
+/* Clickable Header Bar */
+.collapsible-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  cursor: pointer;
+  list-style: none; /* Hides default browser triangle */
+  transition: background-color 0.2s ease;
+}
+
+/* Hide default Safari/Chrome arrow */
+.collapsible-header::-webkit-details-marker {
+  display: none;
+}
+
+.collapsible-header:hover {
+  background-color: #1f2937;
+}
+
+/* Custom Rotating Arrow */
+.collapsible-header::before {
+  content: "▸";
+  color: #d97706;
+  font-size: 1.1rem;
+  margin-right: 12px;
+  transition: transform 0.2s ease;
+}
+
+details[open] .collapsible-header::before {
+  transform: rotate(90deg);
+}
+
+.toggle-hint {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #94a3b8;
+  margin-left: auto;
+}
+
+/* Inner Padding When Expanded */
+.collapsible-content {
+  padding: 0 20px 20px 20px;
+  border-top: 1px solid #1f2937;
+  background-color: #0b0f19;
+}
+
+
+
+
+
+
+
+
+
+
+
+.fig-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin:1.5rem 0}
+.fig{margin:1.5rem 0;background:var(--panel);border:1px solid var(--panel-line);
+  border-radius:8px;padding:1rem 1.25rem}
+.fig-grid .fig{margin:0}
+.fig-title{font-size:.75rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 .15rem}
+.fig-sub{font-size:.85rem;color:var(--muted);margin:0 0 .75rem}
+.fig-note{font-size:.8rem;color:var(--muted);margin:.75rem 0 0}
+ 
+/* legend keys */
+.key{font-size:.8rem;color:var(--muted);margin:.6rem 0 0;display:flex;flex-wrap:wrap;gap:.4rem 1rem}
+.key i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:.35rem;vertical-align:-1px}
+.key i.def{background:var(--neg)}
+.key i.even{background:#64748b}
+.key i.lead{background:var(--gold)}
+.key i.carried{background:#60a5fa}
+.key i.raw{border:2px solid var(--gold);border-radius:50%;box-sizing:border-box}
+.key i.shr{background:var(--gold);border-radius:50%}
+ 
+/* state badges */
+.st{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  padding:.1rem .5rem;border-radius:999px;border:1px solid}
+.st.lead{color:var(--gold);border-color:var(--gold)}
+.st.even{color:var(--muted);border-color:#64748b}
+.st.deficit{color:var(--neg);border-color:var(--neg)}
+ 
+/* inline SVG charts */
+.svgchart{width:100%;height:auto;display:block}
+.svgchart text{fill:var(--muted);font-size:11px;font-family:inherit}
+.svgchart .lbl{fill:var(--text);font-weight:600}
+.svgchart .grid{stroke:var(--panel-line);stroke-width:1}
+.svgchart .axis{stroke:#475569;stroke-width:1}
+.svgchart .cut{stroke:var(--text);stroke-width:1;stroke-dasharray:4 3;opacity:.6}
+.svgchart .curve{fill:none;stroke:var(--gold);stroke-width:2.5}
+.svgchart .pt{fill:var(--gold);stroke:var(--panel);stroke-width:2}
+ 
+/* gauges (Figure 2) */
+.gauge-row,.gauge-scale{display:grid;grid-template-columns:5.5rem 1fr 3.4rem 4.6rem;gap:.6rem;align-items:center}
+.gauge-row{margin:.9rem 0}
+.gauge-label{font-size:.85rem;font-weight:600}
+.gauge{position:relative;height:10px;border-radius:5px;background:rgba(255,255,255,.08)}
+.gauge .band{position:absolute;top:0;bottom:0;left:40%;width:20%;background:rgba(100,116,139,.55)}
+.gauge .mark{position:absolute;top:-4px;left:var(--p);width:18px;height:18px;margin-left:-9px;
+  border-radius:50%;border:3px solid var(--panel);background:var(--gold)}
+.gauge .mark.even{background:#94a3b8}
+.gauge .mark.deficit{background:var(--neg)}
+.gauge-val{font-size:.85rem;font-weight:700;font-variant-numeric:tabular-nums;text-align:right}
+.gauge-scale{font-size:.7rem;color:var(--muted)}
+.gauge-scale div{display:flex;justify-content:space-between}
+ 
+/* comparison bars (Figure 3) */
+.cmp-row{display:grid;grid-template-columns:9rem 1fr 3.6rem;gap:.6rem;align-items:center;margin:.55rem 0}
+.cmp-label{font-size:.85rem}
+.cmp-track{position:relative;height:22px;border-radius:4px;background:rgba(255,255,255,.06);overflow:hidden}
+.cmp-bar{position:absolute;top:0;bottom:0;left:var(--from,0);width:var(--w,0%)}
+.cmp-bar.base{background:#64748b}
+.cmp-bar.gap{background:var(--gold)}
+.cmp-val{font-size:.9rem;font-weight:700;font-variant-numeric:tabular-nums;text-align:right}
+.calc{margin:.9rem 0 0;padding-left:1.2rem;font-size:.88rem}
+.calc li{margin:.3rem 0}
+ 
+/* 3 x 3 situation grid (Figure 4) */
+.state-grid{border-collapse:separate;border-spacing:6px;width:100%;table-layout:fixed;text-align:center}
+.state-grid th{font-size:.72rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--muted);padding:.3rem}
+.state-grid th.axis{width:1.8rem;writing-mode:vertical-rl;transform:rotate(180deg)}
+.state-grid th.rowh{width:4.6rem;text-align:right}
+.state-grid td{border-radius:6px;padding:.8rem .4rem;vertical-align:middle}
+.state-grid .cell-name{display:block;font-size:.85rem;font-weight:700}
+.state-grid .cell-meta{display:block;font-size:.72rem;color:var(--muted);margin-top:.15rem;
+  font-variant-numeric:tabular-nums}
+.state-grid td.diag{background:rgba(255,255,255,.03);border:1px dashed var(--panel-line);color:var(--muted)}
+.state-grid td.carry{background:rgba(217,168,74,.14);border:1px solid rgba(217,168,74,.5)}
+.state-grid td.carried{background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.5)}
+ 
+/* dumbbell (Figure 5) */
+.db-row,.db-scale{display:grid;grid-template-columns:7.5rem 1fr 7rem;gap:.6rem;align-items:center}
+.db-row{margin:1.1rem 0}
+.db-name{font-size:.85rem;font-weight:600}
+.db-name span{display:block;font-weight:400;font-size:.75rem;color:var(--muted)}
+.db-track{position:relative;height:2px;background:rgba(255,255,255,.14)}
+.db-line{position:absolute;top:-1px;height:4px;border-radius:2px;background:var(--gold);opacity:.55;
+  left:min(var(--a),var(--b));width:calc(max(var(--a),var(--b)) - min(var(--a),var(--b)))}
+.db-raw,.db-shr{position:absolute;top:-6px;width:14px;height:14px;margin-left:-7px;
+  border-radius:50%;box-sizing:border-box}
+.db-raw{left:var(--a);border:2px solid var(--gold);background:var(--panel)}
+.db-shr{left:var(--b);background:var(--gold)}
+.db-val{font-size:.8rem;font-variant-numeric:tabular-nums;text-align:right;color:var(--muted)}
+.db-scale{font-size:.7rem;color:var(--muted)}
+.db-scale div{display:flex;justify-content:space-between}
+ 
+/* two-card method grid + blue "carried" accent */
+.method-grid.two{grid-template-columns:1fr 1fr}
+.method.carried{border-left-color:#60a5fa}
+.method.carried .step{background:#60a5fa}
+ 
+@media (max-width:860px){
+  .fig-grid,.method-grid.two{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .gauge-row,.gauge-scale{grid-template-columns:4.5rem 1fr 3rem 4rem}
+  .cmp-row{grid-template-columns:6rem 1fr 3.2rem}
+  .db-row,.db-scale{grid-template-columns:5.5rem 1fr 5.5rem}
+}
+
+.method.aligned{border-left-color:#64748b}
+.method.aligned .step{background:#64748b}
+
+
+
+
+</style>
+
+</head>
+
+<body>
+
+
+
+<style>
+/* ---------- Conclusions page (new CSS only) ---------- */
+.player-card{background:var(--panel);border:1px solid var(--panel-line);border-left:3px solid var(--gold);
+  border-radius:0 8px 8px 0;padding:1.25rem 1.4rem;margin:1.75rem 0}
+.player-head{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .8rem;margin-bottom:1rem}
+.player-head h2{margin:0}
+.pc-role{font-size:.68rem;font-weight:600;letter-spacing:.06em;padding:.05rem .45rem;
+  border:1px solid rgba(255,255,255,.25);border-radius:3px;color:var(--text)}
+.player-tag{margin-left:auto;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:.1rem .65rem}
+
+.pstats{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin:0 0 1rem}
+.pstat{border:1px solid var(--panel-line);border-radius:6px;padding:.55rem .7rem;
+  background:rgba(217,168,74,calc(var(--h,0) * .22))}          /* 217,168,74 = --gold */
+.pstat-label{font-size:.66rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.pstat-val{font-size:1.3rem;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.35}
+.pstat-val small{font-size:.72rem;font-weight:400;color:var(--muted)}
+.pstat-sub{font-size:.74rem;color:var(--muted);min-height:1.2em}
+.player-card p{margin:.65rem 0}
+
+/* verdict */
+.verdict{background:var(--panel);border:1px solid var(--gold);border-radius:8px;
+  padding:1.5rem 1.6rem;margin:1.75rem 0;text-align:center}
+.verdict-label{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.verdict-name{font-family:Georgia,serif;font-size:2.6rem;color:#f8fafc;margin:.15rem 0 .7rem;line-height:1.1}
+.verdict-reasons{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem}
+.verdict-reasons span{font-size:.8rem;border:1px solid var(--gold);border-radius:999px;padding:.15rem .75rem}
+.verdict-note{font-size:.88rem;color:var(--muted);margin:1rem auto 0;max-width:42rem}
+
+@media (max-width:720px){
+  .pstats{grid-template-columns:repeat(2,1fr)}
+  .player-tag{margin-left:0}
+}
+</style>
+
+
+<div class="top-nav-bar">
+  <a href="chapter3.html" class="next-chapter-card">
+    <span class="chapter-label">Previous Section</span>
+    <span class="chapter-title">← Chapter 3: Win Rate Above Expected</span>
+  </a>
+    <a href="lol_project.html" class="back-link">Back to Home</a>
+
+</div>
+
+<h1>Conclusions</h1>
+
+<p>To find the most impactful player, we look at the players who stand out across Chapters 1, 2, and 3 and who are also the names that usually come up in the best-player debate. The scorecard below ranks each of them on four measures: lane dominance (Chapter 1), kill participation (Chapter 2), and the two win-rate measures from Chapter 3. The <strong>carry</strong> list ranks players by how much their team wins above expectation when they are ahead of their teammates, and the <strong>carried</strong> list does the same when they are behind them.</p> <!-- EDIT: intro -->
+
+<figure class="fig">
+  <p class="fig-title">Scorecard · Where each player ranks</p> 
+  <p class="fig-sub">1st is best on every measure</p> 
+  <div class="idx-wrap">
+    <table class="idx-table">
+      <thead>
+        <tr>
+          <th>Player</th>
+          <th class="w">Lane dominance<br><span class="sub">of 125</span></th>
+          <th class="w">Kill participation<br><span class="sub">of 125</span></th>
+          <th class="w">Carry<br><span class="sub">of 125</span></th>
+          <th class="w">Carried<br><span class="sub">of 125</span></th> 
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="who">Chovy<span class="sub"><span class="role">MID</span></span></td>
+          <td class="w" style="--h:0.98">2nd</td><td class="w" style="--h:0.13">110th</td><td class="w" style="--h:0.97">9th</td><td class="w" style="--h:0.93">24th</td>
+        </tr>
+        <tr>
+          <td class="who">Zeus<span class="sub"><span class="role">TOP</span></span></td>
+          <td class="w" style="--h:0.92">10th</td><td class="w" style="--h:0.97">4th</td><td class="w" style="--h:0.99">3rd</td><td class="w" style="--h:0.67">105th</td>
+        </tr>
+        <tr>
+          <td class="who">Gumayusi<span class="sub"><span class="role">BOT</span></span></td>
+          <td class="w" style="--h:0.98">3rd</td><td class="w" style="--h:0.43">73rd</td><td class="w" style="--h:0.98">7th</td><td class="w" style="--h:0.88">34th</td>
+        </tr>
+        <tr>
+          <td class="who">Keria<span class="sub"><span class="role">SUP</span></span></td>
+          <td class="w" style="--h:0.79">27th</td><td class="w" style="--h:0.8">25th</td><td class="w" style="--h:0.94">23rd</td><td class="w" style="--h:0.91">36th</td>
+        </tr>
+        <tr>
+          <td class="who">Faker<span class="sub"><span class="role">MID</span></span></td>
+          <td class="w" style="--h:0.26">94th</td><td class="w" style="--h:0.27">93rd</td><td class="w" style="--h:0.99">4th</td><td class="w" style="--h:1.0">1st</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="fig-note">Shading shows how close to the top of its own list each rank is, so ranks can be compared across columns even though the lists have different sizes. 
+    Carry and carried are ranked by shrunk win rate above expected.</p> <!-- EDIT -->
+</figure>
+
+<article class="player-card">
+  <div class="player-head">
+    <h2>Chovy</h2>
+    <span class="pc-role">MID</span>
+    <span class="player-tag">Lane-first</span> <!-- EDIT: one-line label -->
+  </div>
+  <div class="pstats">
+      <div class="pstat" style="--h:0.98">
+        <div class="pstat-label">Lane dominance</div>
+        <div class="pstat-val">2nd <small>of 125</small></div>
+        <div class="pstat-sub">behind only Blaber</div>
+      </div>
+      <div class="pstat" style="--h:0.13">
+        <div class="pstat-label">Kill participation</div>
+        <div class="pstat-val">110th <small>of 125</small></div>
+        <div class="pstat-sub">far below other mids</div>
+      </div>
+      <div class="pstat" style="--h:0.97">
+        <div class="pstat-label">Carry</div>
+        <div class="pstat-val">9th <small>of 125</small></div>
+        <div class="pstat-sub">63.6% win rate · +6.9 pts</div>
+      </div>
+      <div class="pstat" style="--h:0.93">
+        <div class="pstat-label">Carried</div>
+        <div class="pstat-val">24th <small>of 125</small></div>
+        <div class="pstat-sub">64.7% win rate · +0.5 pts</div>
+      </div>
+  </div>
+  <p>Chovy ranks 2nd in lane dominance, behind only Blaber, but 110th of 125 in standardized-shrunk kill participation. 
+    Compared with other mid laners, he takes part in far fewer kills. This fits his lane-centric style, as he is known for suffocating his lane opponent.
+    However, applying constant pressure in his own lane leaves him with less time to apply pressure elsewhere on the map.</p>
+  <p>The question is whether that trade-off is worth it. In games where Chovy is ahead and his teammates are not, his team wins 63.6% of the time, which is
+     +6.9 points above expected and 9th on the carry list. That suggests he is very good at converting his leads into wins.</p>
+  <p>In games where Chovy is behind and his teammates are ahead, his team wins 64.7% of the time, only +0.5 points above expected (24th on the carried list). 
+    That is a high win rate, but it is about what other teams achieve in the same situation, which points to strong teammates who can carry games when Chovy falls behind.</p>
+</article>
+
+<article class="player-card">
+  <div class="player-head">
+    <h2>Zeus</h2>
+    <span class="pc-role">TOP</span>
+    <span class="player-tag">Converts leads</span> <!-- EDIT: one-line label -->
+  </div>
+  <div class="pstats">
+      <div class="pstat" style="--h:0.92">
+        <div class="pstat-label">Lane dominance</div>
+        <div class="pstat-val">10th <small>of 125</small></div>
+        <div class="pstat-sub">&nbsp;</div>
+      </div>
+      <div class="pstat" style="--h:0.97">
+        <div class="pstat-label">Kill participation</div>
+        <div class="pstat-val">4th <small>of 125</small></div>
+        <div class="pstat-sub">standardized within role</div>
+      </div>
+      <div class="pstat" style="--h:0.99">
+        <div class="pstat-label">Carry</div>
+        <div class="pstat-val">3rd <small>of 125</small></div>
+        <div class="pstat-sub">80.0% win rate · +8.2 pts</div>
+      </div>
+      <div class="pstat" style="--h:0.67">
+        <div class="pstat-label">Carried</div>
+        <div class="pstat-val">105th <small>of 125</small></div>
+        <div class="pstat-sub">50% win rate · -0.4 pts</div>
+      </div>
+  </div>
+  <p>Zeus ranks 10th in lane dominance and 4th in kill participation. He wins his lane and also takes part in a large share of his team's kills, 
+    which largely points toward his individual skill. He is able to use his mechanics to dominate his lane opponent and create opportunities for kills.
+    It may also reflect his teams tend to play around top lane. Zeus has often favored champions like Jayce, Gwen, and Aatrox, who absorb resources and carry in the late game.</p>
+  <p>He is also 3rd on the carry list, with a +8.2 point shrunk win rate above expected over 15 games. 
+    When Zeus is ahead and his teammates are not, his team wins far more often than expected. 
+    In our sample, that makes him one of the most effective players at turning a lead into a win.</p>
+  <p>The carried list tells a different story. When Zeus is behind and his teammates are ahead, 
+    his team wins 0.4 points less often than expected, which ranks him 105th. 
+    The gap is small, but there are two plausible readings: his team depends on his performances to win, or his performances depend on drafts built around him. 
+    The data cannot tell these apart.</p>
+</article>
+
+<article class="player-card">
+  <div class="player-head">
+    <h2>Gumayusi</h2>
+    <span class="pc-role">BOT</span>
+    <span class="player-tag">Lane and lead</span>
+  </div>
+  <div class="pstats">
+      <div class="pstat" style="--h:0.98">
+        <div class="pstat-label">Lane dominance</div>
+        <div class="pstat-val">3rd <small>of 125</small></div>
+        <div class="pstat-sub">&nbsp;</div>
+      </div>
+      <div class="pstat" style="--h:0.43">
+        <div class="pstat-label">Kill participation</div>
+        <div class="pstat-val">73rd <small>of 125</small></div>
+        <div class="pstat-sub">&nbsp;</div>
+      </div>
+      <div class="pstat" style="--h:0.98">
+        <div class="pstat-label">Carry</div>
+        <div class="pstat-val">7th <small>of 125</small></div>
+        <div class="pstat-sub">62.5% win rate · +7.9 pts</div>
+      </div>
+      <div class="pstat" style="--h:0.88">
+        <div class="pstat-label">Carried</div>
+        <div class="pstat-val">34th <small>of 125</small></div>
+        <div class="pstat-sub">70% win rate · +0.4 pts</div>
+      </div>
+  </div>
+  <p>Gumayusi ranks 3rd in lane dominance but only 73rd of 127 in kill participation. 
+    When he is ahead and his teammates are not, he has the 7th-best shrunk win rate above expected (+7.9 points), so he converts leads well. 
+    He also ranks 34th on the carried list, which suggests he plays reasonably well when he is the one who is behind.</p>
+</article>
+
+<article class="player-card">
+  <div class="player-head">
+    <h2>Keria</h2>
+    <span class="pc-role">SUP</span>
+    <span class="player-tag">Beyond the stats</span> 
+  </div>
+  <div class="pstats">
+      <div class="pstat" style="--h:0.79">
+        <div class="pstat-label">Lane dominance</div>
+        <div class="pstat-val">27th <small>of 125</small></div>
+        <div class="pstat-sub">&nbsp;</div>
+      </div>
+      <div class="pstat" style="--h:0.8">
+        <div class="pstat-label">Kill participation</div>
+        <div class="pstat-val">25th <small>of 125</small></div>
+        <div class="pstat-sub">&nbsp;</div>
+      </div>
+      <div class="pstat" style="--h:0.94">
+        <div class="pstat-label">Carry</div>
+        <div class="pstat-val">23rd <small>of 125</small></div>
+        <div class="pstat-sub">57.9% · +3.6 pts</div>
+      </div>
+      <div class="pstat" style="--h:0.91">
+        <div class="pstat-label">Carried</div>
+        <div class="pstat-val">36th <small>of 125</small></div>
+        <div class="pstat-sub">60.9% · +0.4%</div>
+      </div>
+  </div>
+  <p>Keria ranks in the upper middle on every measure: 27th in lane dominance, 25th in kill participation, 21st on the carry list, and 27th on the carried list. He does not lead any category. As the discussion below explains, much of what makes him valuable is not captured by gold, kills, or win rates.</p>
+</article>
+
+<article class="player-card">
+  <div class="player-head">
+    <h2>Faker</h2>
+    <span class="pc-role">MID</span>
+    <span class="player-tag">Plays around teammates</span>
+  </div>
+  <div class="pstats">
+      <div class="pstat" style="--h:0.26">
+        <div class="pstat-label">Lane dominance</div>
+        <div class="pstat-val">94th <small>of 125</small></div>
+        <div class="pstat-sub">&nbsp;</div>
+      </div>
+      <div class="pstat" style="--h:0.27">
+        <div class="pstat-label">Kill participation</div>
+        <div class="pstat-val">93rd <small>of 125</small></div>
+        <div class="pstat-sub">&nbsp;</div>
+      </div>
+      <div class="pstat" style="--h:0.99">
+        <div class="pstat-label">Carry</div>
+        <div class="pstat-val">4th <small>of 125</small></div>
+        <div class="pstat-sub">66.7% win rate · +8.2 pts</div>
+      </div>
+      <div class="pstat" style="--h:1.0">
+        <div class="pstat-label">Carried</div>
+        <div class="pstat-val">1st <small>of 125</small></div>
+        <div class="pstat-sub">85.3% win rate · +3.2 pts</div>
+      </div>
+  </div>
+  <p>Faker ranks 94th in lane dominance and 93rd in kill participation, so by these measures he is not a dominant laner or a high-participation mid laner.</p>
+  <p>Even so, Faker ranks 4th on the carry list (+8.2 points) and 1st on the carried list (+3.2 points). When he is ahead of his teammates, he closes out games, and when he is behind them, 
+    his team still wins more often than expected. One explanation is that Faker relies less on a dominant laning phase and plays around his 
+    teammates, which would make him adaptable: effective whether he is ahead or behind.</p>
+  <p>Faker also shares all of his games with his T1 teammates, so some of this may reflect the team and not Faker alone.</p>
+</article>
+
+
+<h2>Who Is the Most Impactful Player at Worlds?</h2>
+
+<p>Even after this analysis, we cannot name the most impactful player with confidence. Three limits stand in the way.</p>
+
+<div class="method-grid">
+
+  <div class="method">
+    <div class="step">1</div>
+    <h3>Team effect</h3>
+    <p class="line">Many of the top-ranked players are on elite teams: the T1 players who three-peated, or Chovy and Gen.G, who have won 6 LCK titles. 
+        Players who share most of their games receive almost the same credit in the win-rate measures, so individual impact is hard to separate from team strength.</p>
+  </div>
+
+  <div class="method">
+    <div class="step">2</div>
+    <h3>Small samples</h3>
+    <p class="line">The players in the top ten of the carry list have between 6 and 24 games in that situation. Shrinkage reduces the noise, 
+        but small gaps between players should not be over-read.</p> 
+  </div>
+
+  <div class="method">
+    <div class="step">3</div>
+    <h3>What the data cannot see</h3>
+    <p class="line">Keria is the clearest example. His numbers are solid but lead no category, yet he is often called the most impactful player on one of the greatest teams of 
+        all time due to his macro knowledge, drafting, and game-winning playmaking. None of these appear in gold, kp, or win-rate data. Generally, this trend seems to hold for all support players. </p>
+  </div>
+
+</div>
+
+<div class="verdict">
+  <div class="verdict-label">Stats-only pick</div>
+  <div class="verdict-name">Zeus</div>
+  <div class="verdict-reasons">
+    <span>10th in lane dominance</span>
+    <span>4th in kill participation</span>
+    <span>3rd on the carry list (+8.2 pts)</span>
+  </div>
+  <p class="verdict-note">Going by the statistics alone, Zeus has the strongest overall case: he wins his lane, takes part in many kills relative to other top laners,
+     and consistently converts his leads into wins. His weakest measure is the carried list 105th, and his results carry the same team-effect caveat as everyone else's.</p> 
+</div>
+
+
+</body>
+</html>

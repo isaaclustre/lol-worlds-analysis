@@ -1,0 +1,15 @@
+# secrets and local settings
+.env
+
+# editor and OS files
+.idea/
+.vscode/
+.DS_Store
+
+# Python
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+
+# raw data (downloaded separately, see data/README.md)
+data/raw/
