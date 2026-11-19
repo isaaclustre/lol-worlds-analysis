@@ -437,7 +437,6 @@ details[open] .collapsible-header::before {
 
 
 
-<style>
 /* ---------- Chapter 3: figure cards ---------- */
 .fig-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin:1.5rem 0}
 .fig{margin:1.5rem 0;background:var(--panel);border:1px solid var(--panel-line);
@@ -575,16 +574,8 @@ details[open] .collapsible-header::before {
 
 
 
-
-
-
-
-
-
-
-
  
-<h1>Chapter 3: Win Rate Above Expected</h1> <!-- EDIT: chapter title -->
+<h1>Chapter 3: Win Rate Above Expected</h1>
  
 <p>While lane dominance and kill participation describes a player's activity, it doesn't reflect whether or not
     that activity is getting converted into wins. 
@@ -609,7 +600,7 @@ details[open] .collapsible-header::before {
  
 <!-- ================= SECTION 1: STATES ================= -->
 <section class="adjust">
-  <h2>1. Defining Game States</h2> <!-- EDIT: section title -->
+  <h2>1. Defining Game States</h2>
  
   <!-- EDIT: section text -->
   <p>Each game gets two game state labels: one for the individual player and another for their teammates
@@ -621,7 +612,7 @@ details[open] .collapsible-header::before {
      <br>
  
   <div class="math-block labeled">
-    <span class="math-label">State Definition:</span> <!-- EDIT: label -->
+    <span class="math-label">State Definition:</span>
     <div class="math-eq">
       \[
       \text{state} \;=\;
@@ -703,7 +694,7 @@ details[open] .collapsible-header::before {
   <div class="notes">
     <p>Where:</p>
     <ul>
-      <li>\(\text{GD}_{15}\) is gold difference at 15 minutes against the direct opponent (for teammates, the combined gold difference of the other four players).</li> <!-- EDIT: confirm how teammate gold diff is defined -->
+      <li>\(\text{GD}_{15}\) is gold difference at 15 minutes against the direct opponent (for teammates, the combined gold difference of the other four players).</li>
       <li>\(s_r\) is the standard deviation of that quantity for role \(r\). Gold difference averages to zero by construction (every lead has a direct correlating deficit), so we scale without centering.</li>
       <li>The cutoff of 0.4 standard deviations is chosen due to the fact that moderate leads are quite substantial.</li> 
     </ul>
@@ -712,7 +703,7 @@ details[open] .collapsible-header::before {
  
  
 <section class="adjust">
-  <h2>2. Wins Above Expected</h2> <!-- EDIT -->
+  <h2>2. Wins Above Expected</h2> 
  
   <p>Using the 3 individual game states and the 3 team game states, we can create 9 possible game states. 
     We call each combination a <em>cell</em>. For each cell, we measure the overall win rate of that game state.
@@ -812,7 +803,7 @@ details[open] .collapsible-header::before {
   <!-- FIGURE 4: 3 x 3 grid.  EDIT: replace each [00%] / [000] with values from your data -->
   <figure class="fig">
     <p class="fig-title">Figure 4 · The nine situations</p> <!-- EDIT -->
-    <p class="fig-sub">Share of games and team win rate in each cell [all positions combined]</p> <!-- EDIT -->
+    <p class="fig-sub">Share of games and team win rate in each cell [all positions combined]</p>
  
     <table class="state-grid">
       <thead>
@@ -1052,7 +1043,7 @@ details[open] .collapsible-header::before {
           <td class="num">63.6%</td>
           <td class="num">45.3%</td>
           <td class="num total">+6.9%</td>
-          <td class="num total">10th</td>
+          <td class="num total">9th</td>
         </tr>
         <tr>
           <td class="player">Bin<span class="sub">top</span></td>
@@ -1060,7 +1051,7 @@ details[open] .collapsible-header::before {
           <td class="num">52.6%</td>
           <td class="num">33.5%</td>
           <td class="num total">+6.9%</td>
-          <td class="num total">9th</td>
+          <td class="num total">10th</td>
         </tr>
         
       </tbody>
